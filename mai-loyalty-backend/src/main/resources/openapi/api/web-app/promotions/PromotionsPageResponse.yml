@@ -1,0 +1,7 @@
+type: object
+required:
+  - promotions
+properties:
+  promotions:
+    $ref: '../../../common/Promotions.yml'
+description: Результат выполнения запроса

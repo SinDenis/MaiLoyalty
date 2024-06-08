@@ -1,0 +1,91 @@
+post:
+  tags:
+    - PersonalAccountPromotions
+  description: Создать акцию
+  parameters:
+    - in: cookie
+      name: jwt
+      required: true
+      schema:
+        type: string
+      description: JWT в cookie
+  requestBody:
+    description: Update an existent pet in the store
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: './CreatePromotionRequest.yml'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "./CreatePromotionResponse.yml"
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    401:
+      description: No access
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    422:
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    500:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+get:
+  tags:
+    - PersonalAccountPromotions
+  description: Получить список акций
+  parameters:
+    - in: cookie
+      name: jwt
+      required: true
+      schema:
+        type: string
+      description: JWT в cookie
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "./GetPromotionsResponse.yml"
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    401:
+      description: No access
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    422:
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    500:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'

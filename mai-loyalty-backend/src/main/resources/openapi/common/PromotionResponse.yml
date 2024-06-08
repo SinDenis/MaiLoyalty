@@ -1,0 +1,24 @@
+type: object
+required:
+  - id
+  - title
+  - description
+  - category
+properties:
+  id:
+    type: integer
+    format: int64
+    description: Идентификатор промо-акции
+    example: 1
+  title:
+    type: string
+    description: Название промо-акции
+    example: "Новогодние скидки"
+  description:
+    type: string
+    description: Описание промо-акции
+    example: "Скидки на все товары"
+  category:
+    type: string
+    description: Категория акции
+    example: Супермаркеты

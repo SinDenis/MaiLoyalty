@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="5_create_promotion_code_table" author="SinDenis">
+        <createTable tableName="promotion_code" remarks="Данные по уникальнымк кодам промоакций">
+            <column name="id" type="bigserial" remarks="Идентификатор кода">
+                <constraints nullable="false"/>
+            </column>
+            <column name="promotion_id" type="bigint" remarks="Идентификатор промоакции">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code" type="bigint" remarks="Уникальный код">
+                <constraints nullable="false"/>
+            </column>
+            <column name="client_id" type="bigint" remarks="Идентификатор клиента">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_expiration" type="timestamp" remarks="Дата окончания действия">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="promotion_code"
+                                 baseColumnNames="client_id"
+                                 constraintName="promotion_code_to_client_id_fk"
+                                 referencedTableName="client"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="promotion_code"
+                                 baseColumnNames="promotion_id"
+                                 constraintName="promotion_code_to_promotion_id_fk"
+                                 referencedTableName="promotion"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

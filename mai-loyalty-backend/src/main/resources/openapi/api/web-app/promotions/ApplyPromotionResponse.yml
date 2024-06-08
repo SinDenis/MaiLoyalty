@@ -1,0 +1,9 @@
+type: object
+required:
+  - code
+properties:
+  code:
+    type: integer
+    format: int32
+    description: Код применения
+    example: 12341

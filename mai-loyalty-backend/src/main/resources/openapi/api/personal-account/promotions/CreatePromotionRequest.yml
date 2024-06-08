@@ -1,0 +1,18 @@
+type: object
+required:
+  - title
+  - description
+  - category
+properties:
+  title:
+    type: string
+    description: Название промо-акции
+    example: "Новогодние скидки"
+  description:
+    type: string
+    description: Описание промо-акции
+    example: "Скидки на все товары"
+  category:
+    type: string
+    description: Категория прома-акции
+    example: Супермаркеты

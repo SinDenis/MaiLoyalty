@@ -1,0 +1,13 @@
+type: object
+required:
+  - username
+  - password
+properties:
+  username:
+    type: string
+    description: Login пользователя
+    example: "DenisSin"
+  password:
+    type: string
+    description: Пароль
+    example: "squ123squ"

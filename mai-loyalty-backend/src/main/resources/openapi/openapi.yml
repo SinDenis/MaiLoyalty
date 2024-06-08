@@ -1,0 +1,29 @@
+openapi: 3.0.2
+info:
+  title: Loyalty API
+  contact:
+    email: sindchess@gmail.com
+    name: Loyalty
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+  - url: https://loyalty-platform.ru
+tags:
+  - name: WebAppPromotions
+    description: Методы для отобржаения акций в webapp
+  - name: PersonalAccountPromotions
+    description: Методы для работы с акциями через личный кабинет
+paths:
+  /api/webApp/promotions:
+    $ref: "./api/web-app/promotions/PromotionsPage.yml"
+  /api/webApp/promotions/appy:
+    $ref: "./api/web-app/promotions/ApplyPromotion.yml"
+  /api/personal-account/promotions:
+    $ref: "./api/personal-account/promotions/CreateAndGetPromotions.yml"
+  /api/personal-account/register:
+    $ref: "./api/personal-account/users/RegisterUser.yml"
+  /api/personal-account/login:
+    $ref: "./api/personal-account/users/LoginUser.yml"
+  /api/personal-account/promotions/{id}/validate:
+    $ref: "./api/personal-account/promotions/Validate.yml"
+

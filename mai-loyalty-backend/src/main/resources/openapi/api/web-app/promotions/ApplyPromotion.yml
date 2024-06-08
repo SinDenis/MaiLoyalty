@@ -1,0 +1,49 @@
+post:
+  tags:
+    - WebAppPromotions
+  description: Применить акцию
+  parameters:
+    - name: promotionId
+      in: query
+      description: ID акции
+      required: true
+      schema:
+        type: integer
+    - name: username
+      in: query
+      description: Имя клиента
+      required: true
+      schema:
+        type: string
+
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "./ApplyPromotionResponse.yml"
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    401:
+      description: No access
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    422:
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    500:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'

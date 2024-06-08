@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="1_create_company_user_table.xml" relativeToChangelogFile="true"/>
+    <include file="2_create_client_table.xml" relativeToChangelogFile="true"/>
+    <include file="3_create_promotion_table.xml" relativeToChangelogFile="true"/>
+    <include file="4_create_promotion_used_table.xml" relativeToChangelogFile="true"/>
+    <include file="5_create_promotion_code_table.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

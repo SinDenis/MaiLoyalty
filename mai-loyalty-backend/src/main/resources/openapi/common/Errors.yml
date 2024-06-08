@@ -1,0 +1,4 @@
+type: array
+description: Список ошибок
+items:
+  $ref: "./Error.yml"

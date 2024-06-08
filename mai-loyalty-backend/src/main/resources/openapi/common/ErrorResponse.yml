@@ -1,0 +1,18 @@
+type: object
+required:
+  - errors
+  - status
+properties:
+  payload:
+    type: object
+    example: null
+    nullable: true
+    description: Данные
+  errors:
+    $ref: "./Errors.yml"
+  status:
+    type: string
+    description: Статус ошибка
+    example: Error
+    default: Error
+description: Ответ с ошибками

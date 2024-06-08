@@ -1,0 +1,38 @@
+post:
+  tags:
+    - PersonalAccountUsers
+  description: Регистрация пользователя
+  requestBody:
+    description: Данные для регистрации
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: './RegisterUserRequest.yml'
+  responses:
+    200:
+      description: OK
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    401:
+      description: No access
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    422:
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    500:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'

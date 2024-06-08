@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="3_create_promotion_table" author="SinDenis">
+        <createTable tableName="promotion" remarks="Данные по промоакциям">
+            <column name="id" type="bigserial" remarks="Идентификатор промоакции">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="company_id" type="bigint" remarks="Идентификатор компании">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="text" remarks="Заголовок промоакции">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text" remarks="Описание">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="text" remarks="Категория товара">
+                 <constraints nullable="false"/>
+            </column>
+            <column name="region" type="integer" remarks="Регион действия"/>
+            <column name="age_form" type="integer" remarks="Возраст от"/>
+            <column name="age_to" type="integer" remarks="Возраст до"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="promotion"
+                                 baseColumnNames="company_id"
+                                 constraintName="promotion_to_company_id_fk"
+                                 referencedTableName="company_user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

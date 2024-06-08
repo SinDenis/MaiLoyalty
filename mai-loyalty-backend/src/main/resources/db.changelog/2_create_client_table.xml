@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="2_create_client_table" author="SinDenis">
+        <createTable tableName="client" remarks="Данные клиентов">
+            <column name="id" type="bigserial" remarks="Идентификатор пользователя">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="tg_username" type="text" remarks="Имя пользователя в telegram">
+                <constraints nullable="false"/>
+            </column>
+            <column name="age" type="integer" remarks="Возраст пользователя"/>
+            <column name="region_code" type="integer" remarks="Код региона"/>
+            <column name="sex" type="text" remarks="Пол пользователя"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

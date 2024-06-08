@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="1_create_company_user_table" author="SinDenis">
+        <createTable tableName="company_user" remarks="Данные пользователей компаний">
+            <column name="id" type="bigserial" remarks="Идентификатор пользователя">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="username" type="text" remarks="Имя пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="text" remarks="Пароль пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mail" type="text" remarks="Почта пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="company" type="text" remarks="Имя компании">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

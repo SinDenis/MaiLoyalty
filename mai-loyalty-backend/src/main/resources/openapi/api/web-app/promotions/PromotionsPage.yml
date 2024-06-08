@@ -1,0 +1,41 @@
+get:
+  tags:
+    - WebAppPromotions
+  parameters:
+    - name: searchQuery
+      in: query
+      description: Поисковый запрос
+      schema:
+        type: string
+  description: Получение списка промо-акций
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "./PromotionsPageResponse.yml"
+    400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    401:
+      description: No access
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    422:
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'
+    500:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            $ref: '../../../common/ErrorResponse.yml'

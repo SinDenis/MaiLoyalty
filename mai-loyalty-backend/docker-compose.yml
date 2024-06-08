@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  mai-loyalty-backend:
+    image: csindenis/mai-loyalty-backend:latest
+    depends_on:
+      - loyalty-postgres
+    ports:
+      - "443:443"
+    restart: always
+    environment:
+      JDBC_URL: jdbc:postgresql://loyalty-postgres:5432/loyalty
+  loyalty-postgres:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: loyalty
+      POSTGRES_USER: loyalty
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - "loyalty-postgres-data:/var/lib/postgresql/data"
+    healthcheck:
+      test: "pg_isready --username=loyalty && psql --username=loyalty --list"
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+volumes:
+  loyalty-postgres-data:

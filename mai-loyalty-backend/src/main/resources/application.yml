@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: "mai-loyalty"
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/changelog-master.xml
+  datasource:
+    url: ${JDBC_URL:jdbc:postgresql://localhost:5432/loyalty}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+server:
+  ssl:
+    enabled: true
+    certificate: classpath:loyalty.crt
+    certificate-private-key: classpath:certificate.key
+  port: 443
+
+telegram:
+  username: mai_loyalty_bot
+  token: ${TELEGRAM_TOKEN}
+  webapp:
+    url: https://lustrous-torte-f108f0.netlify.app

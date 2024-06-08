@@ -1,0 +1,23 @@
+type: object
+required:
+  - username
+  - password
+  - mail
+  - company
+properties:
+  username:
+    type: string
+    description: Login пользователя
+    example: "DenisSin"
+  password:
+    type: string
+    description: Пароль
+    example: "squ123squ"
+  mail:
+    type: string
+    description: Mail пользователя
+    example: hello@mail.ru
+  company:
+    type: string
+    description: Имя компании
+    example: SDCompany
